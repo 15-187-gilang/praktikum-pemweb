@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Manajemen Tugas Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Manajemen Tugas Mahasiswa 🎓</h1>
+
+        <div class="form-container">
+            <form id="task-form">
+                <h2>Tambah Tugas Baru</h2>
+                <div class="input-group">
+                    <label for="taskName">Nama Tugas:</label>
+                    <input type="text" id="taskName">
+                </div>
+                <div class="input-group">
+                    <label for="courseName">Mata Kuliah:</label>
+                    <input type="text" id="courseName">
+                </div>
+                <div class="input-group">
+                    <label for="deadline">Deadline:</label>
+                    <input type="date" id="deadline" required>
+                </div>
+                <button type="submit" id="submit-button">Tambah Tugas</button>
+            </form>
+        </div>
+        
+        <hr>
+
+        <div class="stats-container">
+            <p>Jumlah Tugas Belum Selesai: <span id="pending-count">0</span></p>
+        </div>
+
+        <div class="filter-container">
+            <label for="filter-status">Filter Status:</label>
+            <select id="filter-status">
+                <option value="all">Semua</option>
+                <option value="pending">Belum Selesai</option>
+                <option value="completed">Selesai</option>
+            </select>
+
+            <label for="filter-course">Filter Mata Kuliah:</label>
+            <input type="text" id="filter-course" placeholder="Cari Mata Kuliah...">
+        </div>
+
+        <hr>
+        
+        <h2>Daftar Tugas</h2>
+        <ul id="task-list" class="task-list">
+            </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
