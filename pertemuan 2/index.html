@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Jadwal Kuliah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>Jadwal Mata Kuliah</header>
+
+  <div class="dashboard">
+    <h2>Jadwal Kuliah</h2>
+
+    <div class="schedule-form">
+      <input type="text" id="matkulInput" placeholder="Nama Mata Kuliah">
+      <input type="text" id="hariInput" placeholder="Hari (contoh: Senin)">
+      <input type="text" id="jamInput" placeholder="Jam (contoh: 08.00 - 09.40)">
+      <button id="addScheduleBtn">Tambah</button>
+    </div>
+
+    <table id="scheduleTable">
+      <thead>
+        <tr>
+          <th>Mata Kuliah</th>
+          <th>Hari</th>
+          <th>Jam</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="time-info">
+      <h2>⏰ Waktu Saat Ini</h2>
+      <p id="currentTime">Memuat waktu...</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
