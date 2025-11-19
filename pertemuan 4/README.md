@@ -49,6 +49,7 @@ gambar ini cara menambahkan data mahasiswa baru
 gambar ini menampilkan nilai tertinggi atau terendah dengan cara difilter
 
 <img width="919" height="315" alt="image" src="https://github.com/user-attachments/assets/7c6d2b6f-f878-45c0-89b2-01995445d890" />
+
 gambar ini menampilkan rata" dari semua data yang ada
 
 ## Cara Menjalankan Program
@@ -60,6 +61,7 @@ gambar ini menampilkan rata" dari semua data yang ada
 
 ```bash
 python nilai_mahasiswa.py
+
 
 
 
