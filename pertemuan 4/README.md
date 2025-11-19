@@ -39,14 +39,16 @@ Sebuah aplikasi sederhana berbasis Python untuk mengelola data nilai mahasiswa, 
 <img width="955" height="742" alt="image" src="https://github.com/user-attachments/assets/7bbeacda-3c07-415e-b219-88687b86a9f5" />
 
 gambar ini menampilkan semua data
+
 <img width="960" height="771" alt="image" src="https://github.com/user-attachments/assets/90c3b910-d215-414a-8110-4f0a1e5ddc3a" />
 
 gambar ini cara menambahkan data mahasiswa baru
+
 <img width="945" height="805" alt="image" src="https://github.com/user-attachments/assets/439831b8-9b5d-4f90-9c84-2353d01e7ea0" />
 
 gambar ini menampilkan nilai tertinggi atau terendah dengan cara difilter
-<img width="919" height="315" alt="image" src="https://github.com/user-attachments/assets/7c6d2b6f-f878-45c0-89b2-01995445d890" />
 
+<img width="919" height="315" alt="image" src="https://github.com/user-attachments/assets/7c6d2b6f-f878-45c0-89b2-01995445d890" />
 gambar ini menampilkan rata" dari semua data yang ada
 
 ## Cara Menjalankan Program
@@ -58,6 +60,7 @@ gambar ini menampilkan rata" dari semua data yang ada
 
 ```bash
 python nilai_mahasiswa.py
+
 
 
 
