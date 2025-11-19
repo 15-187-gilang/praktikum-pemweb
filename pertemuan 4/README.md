@@ -33,9 +33,12 @@ Sebuah aplikasi sederhana berbasis Python untuk mengelola data nilai mahasiswa, 
 
 ## hasil screenshot
 <img width="530" height="252" alt="image" src="https://github.com/user-attachments/assets/408a2eb5-a2d6-4f76-a6c6-a031f88ac19a" />
+
 **tampilan awal** setelah di run
 
+<img width="955" height="742" alt="image" src="https://github.com/user-attachments/assets/7bbeacda-3c07-415e-b219-88687b86a9f5" />
 
+gambar ini menampilkan semua data
 ## Cara Menjalankan Program
 
 1. Pastikan Anda memiliki **Python 3** terinstal di komputer.
@@ -45,6 +48,7 @@ Sebuah aplikasi sederhana berbasis Python untuk mengelola data nilai mahasiswa, 
 
 ```bash
 python nilai_mahasiswa.py
+
 
 
 
