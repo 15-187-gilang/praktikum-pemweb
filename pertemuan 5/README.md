@@ -54,6 +54,10 @@ gambar ini menamilkan cara mencari item berdasarkan judul
 
 
 ## Cara Menjalankan
+1. Pastikan Anda memiliki **Python 3** terinstal di komputer.
+2. Simpan kode ke file bernama `perpustakaan.py` (atau nama lain sesuai keinginan).
+3. Buka terminal/command prompt.
+4. Jalankan perintah:
 ```bash
-
 python perpustakaan.py
+
