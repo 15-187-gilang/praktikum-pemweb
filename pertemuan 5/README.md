@@ -43,8 +43,17 @@ Aplikasi console sederhana untuk mengelola koleksi perpustakaan (Buku & Majalah)
 
 
 ## Hasil Running Program (Screenshot Text)
+<img width="944" height="732" alt="image" src="https://github.com/user-attachments/assets/6732949a-d906-4f73-938b-eaa169f4fa39" />
+
+gambar ini melihatkkan cara menambah item baru dan menampilkan semua item
+
+<img width="799" height="304" alt="image" src="https://github.com/user-attachments/assets/4a1a8780-ad67-4cd4-8a21-397359bc1ae8" />
+
+gambar ini menamilkan cara mencari item berdasarkan judul
+
 
 
 ## Cara Menjalankan
 ```bash
+
 python perpustakaan.py
