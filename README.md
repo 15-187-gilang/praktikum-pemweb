@@ -2,9 +2,6 @@
 # Aplikasi Manajemen Matakuliah dengan Pyramid
 
 Aplikasi API sederhana untuk manajemen matakuliah berdasarkan apa yang telah dipelajari dalam praktikum.
-
-## Deskripsi Proyek
-
 Aplikasi ini adalah API backend untuk mengelola data matakuliah menggunakan Pyramid Framework. Aplikasi menyediakan endpoint REST API untuk operasi CRUD (Create, Read, Update, Delete) pada data matakuliah.
 
 ## Model Data
