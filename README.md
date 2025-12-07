@@ -84,145 +84,96 @@ melihat semua data matakuliah yang tersimpan di database.
 
 **Screenshot Testing:**
 
-![GET All Matakuliah](screenshots/get_all_matakuliah.png)
+<img width="1445" height="960" alt="image" src="https://github.com/user-attachments/assets/f14a9023-8c77-4479-ba7e-6024acdc49a0" />
 
 **Contoh Response:**
 ```json
 {
-  "matakuliah": [
-    {
-      "id": 1,
-      "kode_mk": "IF101",
-      "nama_mk": "Algoritma dan Pemrograman",
-      "sks": 3,
-      "semester": 1
-    },
-    {
-      "id": 2,
-      "kode_mk": "IF102",
-      "nama_mk": "Struktur Data",
-      "sks": 3,
-      "semester": 2
-    }
-  ]
+    "success": true,
+    "message": "Data ditemukan: 4",
+    "data": [
+        {
+            "id": 2,
+            "name": "Basis Data",
+            "value": 4
+        },
+        {
+            "id": 3,
+            "name": "Jaringan Komputer",
+            "value": 3
+        },
+        {
+            "id": 4,
+            "name": "Keamanan Informasi",
+            "value": 3
+        },
+        {
+            "id": 5,
+            "name": "Web Development",
+            "value": 4
+        }
+    ]
 }
 ```
 
 ---
 
-### 2. GET Matakuliah by ID
-
-Mendapatkan detail satu matakuliah berdasarkan ID.
-
-**Endpoint:** `GET http://localhost:6543/api/matakuliah/{id}`
-
-**Screenshot Testing:**
-
-![GET Matakuliah by ID](screenshots/get_matakuliah_by_id.png)
-
-**Contoh Response:**
-```json
-{
-  "id": 1,
-  "kode_mk": "IF101",
-  "nama_mk": "Algoritma dan Pemrograman",
-  "sks": 3,
-  "semester": 1
-}
-```
-
----
-
-### 3. POST - Create Matakuliah
+### 2. POST
 
 Menambahkan matakuliah baru ke database.
 
-**Endpoint:** `POST http://localhost:6543/api/matakuliah`
+**Endpoint:** `http://localhost:6543/api/models`
 
-**Headers:**
-- Content-Type: application/json
 
 **Request Body:**
 ```json
 {
-  "kode_mk": "IF301",
-  "nama_mk": "Pemrograman Web",
-  "sks": 3,
-  "semester": 5
+  "name": "Web Development",
+  "value": 4
 }
 ```
 
 **Screenshot Testing:**
 
-![POST Create Matakuliah](screenshots/post_create_matakuliah.png)
-
-**Response (201 Created):**
-```json
-{
-  "message": "Matakuliah berhasil ditambahkan",
-  "data": {
-    "id": 4,
-    "kode_mk": "IF301",
-    "nama_mk": "Pemrograman Web",
-    "sks": 3,
-    "semester": 5
-  }
-}
-```
+<img width="1381" height="456" alt="image" src="https://github.com/user-attachments/assets/de56af46-6a53-4715-bdf1-e51f1bd0caaa" />
 
 ---
 
-### 4. PUT - Update Matakuliah
+### 3. PUT 
 
 Mengupdate data matakuliah yang sudah ada.
 
-**Endpoint:** `PUT http://localhost:6543/api/matakuliah/{id}`
-
-**Headers:**
-- Content-Type: application/json
+**Endpoint:** `http://localhost:6543/api/models/1`
 
 **Request Body:**
 ```json
 {
-  "nama_mk": "Pemrograman Web Lanjut",
-  "sks": 4
+  "name": "Algoritma Lanjut",
+  "value": 5
 }
 ```
 
 **Screenshot Testing:**
 
-![PUT Update Matakuliah](screenshots/put_update_matakuliah.png)
-
-**Response (200 OK):**
-```json
-{
-  "message": "Matakuliah berhasil diupdate",
-  "data": {
-    "id": 4,
-    "kode_mk": "IF301",
-    "nama_mk": "Pemrograman Web Lanjut",
-    "sks": 4,
-    "semester": 5
-  }
-}
-```
+<img width="1390" height="792" alt="image" src="https://github.com/user-attachments/assets/a52cdbfe-0b62-4d15-9605-9eb0fd7e14f1" />
 
 ---
 
-### 5. DELETE - Delete Matakuliah
+### 4. DELETE 
 
 Menghapus matakuliah dari database.
 
-**Endpoint:** `DELETE http://localhost:6543/api/matakuliah/{id}`
+**Endpoint:** `http://localhost:6543/api/models/1`
 
 **Screenshot Testing:**
 
-![DELETE Matakuliah](screenshots/delete_matakuliah.png)
+<img width="1127" height="880" alt="Screenshot 2025-12-07 220003" src="https://github.com/user-attachments/assets/3dbfea00-9432-4a56-98fb-ee7043ac5c49" />
 
 **Response (200 OK):**
 ```json
 {
-  "message": "Matakuliah berhasil dihapus"
+  "success":true,
+  "message": "Data ID 1 berhasil dihapus"
 }
 ```
 
@@ -237,32 +188,6 @@ Menghapus matakuliah dari database.
 5. Screenshot setiap hasil testing untuk dokumentasi
 6. Simpan screenshot di folder `screenshots/`
 
-## Struktur Proyek
-
-```
-pyramid_mahasiswa/
-├── pyramid_mahasiswa/
-│   ├── __init__.py           # Konfigurasi aplikasi
-│   ├── routes.py             # Definisi routes
-│   ├── models/
-│   │   ├── __init__.py
-│   │   ├── meta.py           # Base model
-│   │   ├── mymodel.py        # Contoh model
-│   │   └── matakuliah.py     # Model Matakuliah
-│   ├── views/
-│   │   ├── __init__.py
-│   │   ├── default.py        # View default
-│   │   └── matakuliah.py     # API endpoints matakuliah
-│   ├── alembic/
-│   │   ├── env.py
-│   │   └── versions/         # Migration files
-│   ├── templates/
-│   └── static/
-├── development.ini           # Konfigurasi development
-├── production.ini            # Konfigurasi production
-├── alembic.ini              # Konfigurasi Alembic
-├── setup.py                 # Setup script
-└── README.md                # Dokumentasi ini
 ```
 
 ## Teknologi yang Digunakan
@@ -271,25 +196,3 @@ pyramid_mahasiswa/
 - **Database:** SQLite (via SQLAlchemy)
 - **Migration:** Alembic
 - **Server:** Waitress
-
-## Troubleshooting
-
-### Error: Database tidak ditemukan
-Pastikan Anda sudah menjalankan migration dengan `alembic upgrade head`
-
-### Error: Module tidak ditemukan
-Pastikan Anda sudah install dependencies dengan `pip install -e .`
-
-### Error: Port sudah digunakan
-Ubah port di `development.ini` pada section `[server:main]`
-
-## Catatan Penting
-
-- Pastikan virtual environment sudah aktif sebelum menjalankan perintah
-- Jangan lupa menjalankan migration sebelum menjalankan server
-- Untuk production, gunakan `production.ini` dengan konfigurasi database yang sesuai
-- API menggunakan JSON format untuk request dan response
-
-## Lisensi
-
-Proyek ini dibuat untuk keperluan praktikum.
