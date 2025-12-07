@@ -1,0 +1,123 @@
+📝 POSTMAN POST REQUEST - STEP BY STEP
+
+═══════════════════════════════════════════════════════════════════════════════
+
+LANGKAH 1: SETUP URL DAN METHOD
+────────────────────────────────
+
+1. Buka tab baru di Postman (atau buat request baru)
+2. Ubah method menjadi "POST" (dropdown di sebelah kiri URL bar)
+3. Masukkan URL: http://localhost:6543/api/models
+
+═══════════════════════════════════════════════════════════════════════════════
+
+LANGKAH 2: SET HEADERS
+──────────────────────
+
+1. Klik tab "Headers"
+2. Pastikan ada header:
+   Key: Content-Type
+   Value: application/json
+
+═══════════════════════════════════════════════════════════════════════════════
+
+LANGKAH 3: SET BODY (RAW JSON)
+───────────────────────────────
+
+1. Klik tab "Body"
+2. Pilih "raw"
+3. Dari dropdown, pilih "JSON" (bukan Text)
+4. Copy-paste salah satu JSON di bawah ini:
+
+CONTOH 1 - Data baru:
+────────────────────
+{
+  "name": "Web Development",
+  "value": 4
+}
+
+CONTOH 2 - Data lain:
+─────────────────────
+{
+  "name": "Mobile Development",
+  "value": 3
+}
+
+CONTOH 3 - Data lain:
+─────────────────────
+{
+  "name": "Machine Learning",
+  "value": 4
+}
+
+CONTOH 4 - Data lain:
+─────────────────────
+{
+  "name": "Cloud Computing",
+  "value": 3
+}
+
+═══════════════════════════════════════════════════════════════════════════════
+
+LANGKAH 4: KIRIM REQUEST
+────────────────────────
+
+1. Klik tombol "Send"
+2. Lihat Response di bawah
+
+═══════════════════════════════════════════════════════════════════════════════
+
+EXPECTED RESPONSE:
+──────────────────
+
+Status: 200 OK
+
+Body:
+{
+  "success": true,
+  "message": "Data berhasil ditambahkan",
+  "data": {
+    "id": 5,
+    "name": "Web Development",
+    "value": 4
+  }
+}
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CATATAN PENTING:
+────────────────
+
+✓ Name harus UNIK (tidak boleh sama dengan data lain yang sudah ada)
+✓ Value harus angka (integer), bukan string
+✓ Kedua field (name dan value) WAJIB ada
+
+Jika ada error "duplicate key value violates unique constraint":
+→ Berarti name sudah ada di database
+→ Gunakan name yang berbeda
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TESTING SEQUENCE:
+─────────────────
+
+1. GET /api/models → Lihat semua data (seharusnya 4 data awal)
+2. POST /api/models → Tambah 1 data baru (id 5)
+3. POST /api/models → Tambah 1 data baru (id 6)
+4. POST /api/models → Tambah 1 data baru (id 7)
+5. POST /api/models → Tambah 1 data baru (id 8)
+6. GET /api/models → Lihat semua data (seharusnya sudah 8 data)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+────────────────
+
+Error: "success": false
+Kemungkinan:
+- Name sudah ada → gunakan name baru
+- Value bukan angka → masukkan angka
+- JSON format salah → check syntax JSON
+- Field name atau value missing → pastikan kedua field ada
+
+═══════════════════════════════════════════════════════════════════════════════

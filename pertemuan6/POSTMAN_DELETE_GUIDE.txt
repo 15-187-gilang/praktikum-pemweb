@@ -1,0 +1,153 @@
+🗑️ POSTMAN DELETE REQUEST - STEP BY STEP
+
+═══════════════════════════════════════════════════════════════════════════════
+
+LANGKAH 1: SETUP URL DAN METHOD
+────────────────────────────────
+
+1. Buka tab baru di Postman (atau buat request baru)
+2. Ubah method menjadi "DELETE" (dropdown di sebelah kiri URL bar)
+3. Masukkan URL: http://localhost:6543/api/models/1
+
+CATATAN: Ganti angka "1" dengan ID data yang ingin dihapus
+Contoh:
+- http://localhost:6543/api/models/1  (hapus data ID 1)
+- http://localhost:6543/api/models/5  (hapus data ID 5)
+- http://localhost:6543/api/models/8  (hapus data ID 8)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+LANGKAH 2: TIDAK PERLU HEADERS atau BODY
+──────────────────────────────────────────
+
+DELETE request tidak memerlukan:
+✓ Content-Type header (sudah default)
+✓ Body (tidak ada data yang dikirim)
+
+Hanya perlu URL dengan ID yang jelas.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+LANGKAH 3: KIRIM REQUEST
+────────────────────────
+
+1. Klik tombol "Send"
+2. Lihat Response di bawah
+
+═══════════════════════════════════════════════════════════════════════════════
+
+EXPECTED RESPONSE:
+──────────────────
+
+Status: 200 OK
+
+Body (jika delete berhasil):
+{
+  "success": true,
+  "message": "Data berhasil dihapus",
+  "data": {
+    "id": 1,
+    "name": "Algoritma dan Pemrograman",
+    "value": 3
+  }
+}
+
+Body (jika data tidak ditemukan):
+{
+  "success": false,
+  "message": "Data dengan ID 999 tidak ditemukan",
+  "data": null
+}
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CATATAN PENTING:
+────────────────
+
+✓ Ganti ID di URL sesuai data yang ingin dihapus
+✓ DELETE adalah operasi PERMANEN (tidak bisa di-undo)
+✓ Pastikan ID yang dihapus benar sebelum kirim request
+✓ Lihat GET /api/models terlebih dahulu untuk confirm ID
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CONTOH PENGGUNAAN:
+──────────────────
+
+HAPUS DATA ID 1:
+────────────────
+URL: http://localhost:6543/api/models/1
+Method: DELETE
+Headers: (tidak perlu diisi)
+Body: (kosong)
+
+HAPUS DATA ID 5:
+────────────────
+URL: http://localhost:6543/api/models/5
+Method: DELETE
+Headers: (tidak perlu diisi)
+Body: (kosong)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TESTING SEQUENCE:
+─────────────────
+
+1. GET /api/models → Lihat semua data (catat ID yang ada)
+2. GET /api/models/1 → Lihat detail data ID 1
+3. DELETE /api/models/1 → Hapus data ID 1
+4. GET /api/models/1 → Verifikasi data ID 1 sudah dihapus (404)
+5. GET /api/models → Lihat semua data (seharusnya ID 1 sudah hilang)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+────────────────
+
+Error: "success": false, "Data dengan ID X tidak ditemukan"
+Kemungkinan:
+- ID tidak ada atau sudah dihapus sebelumnya
+- Gunakan ID yang valid (lihat dari GET request sebelumnya)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TIPS & BEST PRACTICE:
+─────────────────────
+
+✓ Selalu lakukan GET terlebih dahulu untuk confirm ID yang ada
+✓ Jangan hapus data penting tanpa backup
+✓ Double-check ID sebelum DELETE
+✓ Gunakan Postman Collections untuk organize requests
+✓ Simpan history untuk audit trail
+
+═══════════════════════════════════════════════════════════════════════════════
+
+RINGKASAN SEMUA CRUD OPERATION:
+───────────────────────────────
+
+GET (Read All)
+└─ URL: http://localhost:6543/api/models
+└─ Method: GET
+└─ Body: Tidak ada
+
+GET (Read Detail)
+└─ URL: http://localhost:6543/api/models/{id}
+└─ Method: GET
+└─ Body: Tidak ada
+
+POST (Create)
+└─ URL: http://localhost:6543/api/models
+└─ Method: POST
+└─ Body: {"name": "...", "value": ...}
+
+PUT (Update)
+└─ URL: http://localhost:6543/api/models/{id}
+└─ Method: PUT
+└─ Body: {"name": "...", "value": ...} (salah satu atau keduanya)
+
+DELETE (Delete)
+└─ URL: http://localhost:6543/api/models/{id}
+└─ Method: DELETE
+└─ Body: Tidak ada
+
+═══════════════════════════════════════════════════════════════════════════════

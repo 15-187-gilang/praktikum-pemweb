@@ -1,0 +1,195 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    ✅ POSTMAN TESTING SIAP! 
+═══════════════════════════════════════════════════════════════════════════════
+
+🎉 POSTMAN COLLECTION SUDAH DIBUAT!
+
+File: Pertemuan6_API.postman_collection.json
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 QUICK START - LANGKAH SETUP:
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: Pastikan Server Running
+────────────────────────────────
+✓ Server sudah berjalan di http://localhost:6543
+✓ PostgreSQL connected ke database 'pertemuan6'
+
+STEP 2: Insert Sample Data (Optional)
+──────────────────────────────────────
+Jalankan:
+  python insert_sample_data.py
+
+Output:
+  ✅ 5 data berhasil diinsert ke database!
+  Data di database:
+    ID 1: Algoritma dan Pemrograman (value: 3)
+    ID 2: Struktur Data (value: 4)
+    ID 3: Database Management System (value: 3)
+    ID 4: Web Programming (value: 4)
+    ID 5: Mobile Development (value: 3)
+
+STEP 3: Buka Postman
+──────────────────
+1. Launch aplikasi Postman
+2. File → Import
+3. Pilih file: Pertemuan6_API.postman_collection.json
+4. Click Import
+5. Collection siap di sidebar kiri!
+
+STEP 4: Test Endpoints
+─────────────────────
+Collection sudah berisi:
+✓ GET - Daftar Semua Matakuliah
+✓ GET - Detail Matakuliah (by ID)
+✓ POST - Tambah Matakuliah Baru
+✓ PUT - Update Matakuliah
+✓ DELETE - Hapus Matakuliah
+
+Tinggal click "Send" untuk test!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📝 API ENDPOINTS:
+═══════════════════════════════════════════════════════════════════════════════
+
+1. GET ALL
+   Method: GET
+   URL: http://localhost:6543/api/models
+   Response: List of all matakuliah
+   
+2. GET BY ID
+   Method: GET
+   URL: http://localhost:6543/api/models/{id}
+   Response: Single matakuliah detail
+   
+3. CREATE
+   Method: POST
+   URL: http://localhost:6543/api/models
+   Body: { "name": "...", "value": ... }
+   Response: Created matakuliah with ID
+   
+4. UPDATE
+   Method: PUT
+   URL: http://localhost:6543/api/models/{id}
+   Body: { "name": "...", "value": ... }
+   Response: Updated matakuliah
+   
+5. DELETE
+   Method: DELETE
+   URL: http://localhost:6543/api/models/{id}
+   Response: Success message
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 FILE YANG DIBUAT:
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Pertemuan6_API.postman_collection.json
+   → Postman collection dengan 5 endpoints pre-configured
+
+✅ pertemuan6/views/api.py
+   → API views untuk CRUD operations
+
+✅ POSTMAN_TESTING_GUIDE.md
+   → Panduan lengkap testing dengan Postman
+
+✅ insert_sample_data.py
+   → Script untuk insert sample data
+
+✅ routes.py (updated)
+   → Tambah 5 API routes
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🧪 TESTING FLOW:
+═══════════════════════════════════════════════════════════════════════════════
+
+1. GET /api/models (empty or with data)
+   ↓
+2. POST /api/models (add matakuliah 1)
+   ↓
+3. POST /api/models (add matakuliah 2)
+   ↓
+4. GET /api/models (see all 2 data)
+   ↓
+5. GET /api/models/{id} (see detail)
+   ↓
+6. PUT /api/models/{id} (update data)
+   ↓
+7. DELETE /api/models/{id} (delete data)
+   ↓
+8. GET /api/models (verify delete)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ EXPECTED RESPONSES:
+═══════════════════════════════════════════════════════════════════════════════
+
+Success 200/201:
+{
+  "success": true,
+  "message": "...",
+  "data": {...}
+}
+
+Error 400/404:
+{
+  "success": false,
+  "message": "...",
+  "data": null
+}
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 NEXT STEPS:
+═══════════════════════════════════════════════════════════════════════════════
+
+1. ✅ Baca: POSTMAN_TESTING_GUIDE.md
+2. ✅ Run: python insert_sample_data.py (optional)
+3. ✅ Buka: Postman aplikasi
+4. ✅ Import: Pertemuan6_API.postman_collection.json
+5. ✅ Test: Semua endpoints
+6. ✅ Verify: Response status & data
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 DOKUMENTASI:
+═══════════════════════════════════════════════════════════════════════════════
+
+File: POSTMAN_TESTING_GUIDE.md
+- Setup Postman
+- Import Collection
+- Testing Step-by-Step
+- Expected Results
+- Troubleshooting
+- Tips & Tricks
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔍 SERVER STATUS:
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Server Running: http://localhost:6543
+✅ Database Connected: postgresql://pertemuan6_user@localhost/pertemuan6
+✅ API Endpoints Ready: /api/models (GET/POST/PUT/DELETE)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 TIPS:
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ Collection include pre-configured URLs & bodies
+✓ Tinggal click "Send" untuk test
+✓ Postman auto-format JSON responses
+✓ Save request history untuk reuse
+✓ Use Postman variables untuk DRY
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎉 POSTMAN TESTING SIAP DIGUNAKAN!
+
+Baca: POSTMAN_TESTING_GUIDE.md untuk detail lengkap
+
+═══════════════════════════════════════════════════════════════════════════════

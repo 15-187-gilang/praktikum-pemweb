@@ -1,0 +1,3 @@
+[run]
+source = pertemuan6
+omit = pertemuan6/test*

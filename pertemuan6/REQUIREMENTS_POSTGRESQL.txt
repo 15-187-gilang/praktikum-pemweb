@@ -1,0 +1,39 @@
+# PostgreSQL Database Requirements
+# File ini mendokumentasikan package yang diperlukan untuk PostgreSQL
+
+# Core PostgreSQL Driver
+psycopg2-binary>=2.9.0          # PostgreSQL adapter for Python
+
+# SQLAlchemy (already in setup.py but documented here)
+SQLAlchemy>=1.4.0               # ORM and database toolkit
+
+# Database migration tool
+alembic>=1.8.0                  # Database migration management
+
+# Transaction management
+transaction>=3.0                # Transaction manager
+zope.sqlalchemy>=1.6            # SQLAlchemy integration with Zope
+
+# Web framework
+pyramid>=2.0                    # Web framework
+
+# Optional: PostgreSQL client tools (for system, not Python)
+# Install di system: apt-get install postgresql-client (Linux)
+#                   brew install postgresql (macOS)
+#                   Download installer (Windows)
+
+# Testing
+pytest>=7.0                     # Testing framework
+pytest-cov>=4.0                 # Coverage plugin for pytest
+WebTest>=3.0                    # Testing web application
+
+# Development tools
+pyramid-debugtoolbar>=4.0       # Debug toolbar
+pyramid-jinja2>=2.1             # Jinja2 template language
+
+# Connection pooling (optional but recommended for production)
+# pip install sqlalchemy[postgresql]
+
+# Advanced features (optional)
+# pip install alembic_utils      # Alembic utilities
+# pip install pgcli              # PostgreSQL CLI

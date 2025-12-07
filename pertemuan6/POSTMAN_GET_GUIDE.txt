@@ -1,0 +1,78 @@
+🧪 POSTMAN GET REQUEST - STEP BY STEP
+
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: PASTIKAN SERVER RUNNING
+──────────────────────────────────
+✓ Server sudah running di http://localhost:6543
+
+STEP 2: BUKA POSTMAN (SUDAH TERBUKA)
+─────────────────────────────────────
+✓ Postman sudah terbuka di browser Anda
+
+STEP 3: BUAT GET REQUEST
+────────────────────────
+
+1. Di URL bar, masukkan:
+   http://localhost:6543/api/models
+
+2. Pastikan method sudah "GET" (sudah default)
+
+3. Klik "Send"
+
+4. Lihat Response di bawah
+
+═══════════════════════════════════════════════════════════════════════════════
+
+EXPECTED RESPONSE:
+───────────────────
+
+Status: 200 OK
+
+Body (JSON):
+{
+  "success": true,
+  "message": "Data ditemukan: 0",
+  "data": []
+}
+
+═══════════════════════════════════════════════════════════════════════════════
+
+JIKA INGIN MENAMBAH DATA DULU (POST):
+──────────────────────────────────────
+
+1. Method: POST
+2. URL: http://localhost:6543/api/models
+3. Headers: Content-Type: application/json
+4. Body (raw JSON):
+   {
+     "name": "Algoritma dan Pemrograman",
+     "value": 3
+   }
+5. Klik "Send"
+
+Maka GET akan return data yang baru ditambahkan.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TESTING SEQUENCE:
+──────────────────
+
+1. GET /api/models → lihat data (awalnya kosong)
+2. POST /api/models → tambah data
+3. GET /api/models → lihat data yang sudah ditambah
+4. GET /api/models/1 → lihat detail data
+5. PUT /api/models/1 → update data
+6. DELETE /api/models/1 → hapus data
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TIPS POSTMAN:
+──────────────
+
+✓ Gunakan tab untuk organize requests
+✓ Save requests di Collection
+✓ Gunakan Environments untuk variables
+✓ Check Headers dan Body sebelum Send
+
+═══════════════════════════════════════════════════════════════════════════════

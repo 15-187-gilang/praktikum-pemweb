@@ -1,0 +1,291 @@
+═══════════════════════════════════════════════════════════════════════════════
+                   🧪 POSTMAN TESTING SIAP! 🧪
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ API ENDPOINTS SIAP DITEST DI POSTMAN
+
+Server: http://localhost:6543
+Database: PostgreSQL (pertemuan6)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 API ENDPOINTS:
+═══════════════════════════════════════════════════════════════════════════════
+
+1️⃣  GET - DAFTAR SEMUA MATAKULIAH
+    URL: http://localhost:6543/api/models
+    Method: GET
+    Headers: 
+      - Accept: application/json
+    Response:
+    {
+      "success": true,
+      "message": "Data ditemukan: 0",
+      "data": []
+    }
+
+2️⃣  POST - TAMBAH MATAKULIAH BARU
+    URL: http://localhost:6543/api/models
+    Method: POST
+    Headers:
+      - Content-Type: application/json
+    Body (JSON):
+    {
+      "name": "Algoritma dan Pemrograman",
+      "value": 3
+    }
+    Response:
+    {
+      "success": true,
+      "message": "Data berhasil ditambahkan",
+      "data": {
+        "id": 1,
+        "name": "Algoritma dan Pemrograman",
+        "value": 3
+      }
+    }
+
+3️⃣  GET - DETAIL MATAKULIAH BERDASARKAN ID
+    URL: http://localhost:6543/api/models/1
+    Method: GET
+    Headers:
+      - Accept: application/json
+    Response:
+    {
+      "success": true,
+      "message": "Data ditemukan",
+      "data": {
+        "id": 1,
+        "name": "Algoritma dan Pemrograman",
+        "value": 3
+      }
+    }
+
+4️⃣  PUT - UPDATE MATAKULIAH
+    URL: http://localhost:6543/api/models/1
+    Method: PUT
+    Headers:
+      - Content-Type: application/json
+    Body (JSON):
+    {
+      "name": "Algoritma dan Pemrograman (Update)",
+      "value": 4
+    }
+    Response:
+    {
+      "success": true,
+      "message": "Data berhasil diupdate",
+      "data": {
+        "id": 1,
+        "name": "Algoritma dan Pemrograman (Update)",
+        "value": 4
+      }
+    }
+
+5️⃣  DELETE - HAPUS MATAKULIAH
+    URL: http://localhost:6543/api/models/1
+    Method: DELETE
+    Response:
+    {
+      "success": true,
+      "message": "Data ID 1 berhasil dihapus"
+    }
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 CARA TESTING DI POSTMAN:
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: INSTALL POSTMAN
+─────────────────────
+Download dari: https://www.postman.com/downloads/
+Install sesuai OS Anda
+
+STEP 2: BUKA POSTMAN
+───────────────────
+Launch aplikasi Postman
+
+STEP 3: TEST ENDPOINT 1 - GET ALL
+─────────────────────────────────
+1. Click "+" untuk create request baru
+2. Method: GET
+3. URL: http://localhost:6543/api/models
+4. Click "Send"
+5. Lihat response (seharusnya data kosong atau list matakuliah)
+
+STEP 4: TEST ENDPOINT 2 - POST CREATE
+──────────────────────────────────────
+1. Create request baru
+2. Method: POST
+3. URL: http://localhost:6543/api/models
+4. Klik "Body" → Raw → JSON
+5. Paste body:
+   {
+     "name": "Algoritma dan Pemrograman",
+     "value": 3
+   }
+6. Click "Send"
+7. Lihat response (status 201)
+8. Catat ID yang dikembalikan (ID 1)
+
+STEP 5: TEST ENDPOINT 3 - GET DETAIL
+────────────────────────────────────
+1. Create request baru
+2. Method: GET
+3. URL: http://localhost:6543/api/models/1
+4. Click "Send"
+5. Lihat response (detail matakuliah ID 1)
+
+STEP 6: TEST ENDPOINT 4 - PUT UPDATE
+────────────────────────────────────
+1. Create request baru
+2. Method: PUT
+3. URL: http://localhost:6543/api/models/1
+4. Klik "Body" → Raw → JSON
+5. Paste body:
+   {
+     "name": "Algoritma dan Pemrograman (Updated)",
+     "value": 4
+   }
+6. Click "Send"
+7. Lihat response (data sudah diupdate)
+
+STEP 7: TEST ENDPOINT 5 - DELETE
+────────────────────────────────
+1. Create request baru
+2. Method: DELETE
+3. URL: http://localhost:6543/api/models/1
+4. Click "Send"
+5. Lihat response (success message)
+
+STEP 8: VERIFY DELETE - GET ALL LAGI
+────────────────────────────────────
+1. Create request baru
+2. Method: GET
+3. URL: http://localhost:6543/api/models
+4. Click "Send"
+5. Verifikasi data sudah dihapus
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 TESTING FLOW SUMMARY:
+═══════════════════════════════════════════════════════════════════════════════
+
+1. GET /api/models (empty) 
+   ↓
+2. POST /api/models (create)
+   ↓
+3. GET /api/models (see data)
+   ↓
+4. GET /api/models/1 (detail)
+   ↓
+5. PUT /api/models/1 (update)
+   ↓
+6. DELETE /api/models/1 (delete)
+   ↓
+7. GET /api/models (verify deleted)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ EXPECTED RESPONSES:
+═══════════════════════════════════════════════════════════════════════════════
+
+Success 200:
+{
+  "success": true,
+  "message": "...",
+  "data": {...}
+}
+
+Success 201 (Created):
+{
+  "success": true,
+  "message": "Data berhasil ditambahkan",
+  "data": {...}
+}
+
+Error 400 (Bad Request):
+{
+  "success": false,
+  "message": "Error message",
+  "data": null
+}
+
+Error 404 (Not Found):
+{
+  "success": false,
+  "message": "Data ID 999 tidak ditemukan",
+  "data": null
+}
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📝 CATATAN PENTING:
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ Server harus running: pserve development.ini
+✓ PostgreSQL harus connected
+✓ Database pertemuan6 harus sudah dibuat
+✓ User pertemuan6_user sudah ada dengan password: pertemuan6123
+✓ Content-Type header important untuk POST/PUT
+✓ Body harus JSON format untuk POST/PUT
+✓ Status code:
+  - 200 = OK (GET, PUT, DELETE)
+  - 201 = Created (POST)
+  - 400 = Bad Request
+  - 404 = Not Found
+  - 500 = Server Error
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 TIPS POSTMAN:
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Gunakan "Collections" untuk save semua requests
+   - Buat collection "Pertemuan6 API"
+   - Simpan semua 5 requests di collection
+   
+2. Gunakan "Environment" untuk manage URLs
+   - Set variable {{base_url}} = http://localhost:6543
+   - Gunakan di request: {{base_url}}/api/models
+   
+3. Gunakan "Tests" untuk auto-validate responses
+   - Check status code
+   - Check response body
+   
+4. Export results untuk dokumentasi
+   - Run Collection
+   - Export Results as JSON/HTML
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔍 TROUBLESHOOTING:
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ Connection refused
+   ✓ Pastikan server running: pserve development.ini
+   ✓ Pastikan port 6543 tidak diblock
+   
+❌ 404 Not Found
+   ✓ Cek URL endpoint benar
+   ✓ Cek method (GET/POST/PUT/DELETE)
+   
+❌ 400 Bad Request
+   ✓ Cek JSON format di Body
+   ✓ Cek Content-Type header
+   ✓ Cek required fields (name, value)
+   
+❌ Database error
+   ✓ Check PostgreSQL running
+   ✓ Check connection string di development.ini
+   ✓ Jalankan: python check_db.py
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎉 SIAP UNTUK TESTING!
+
+Buka Postman dan ikuti STEP 1-8 di atas.
+
+Selamat testing! 🧪
+
+═══════════════════════════════════════════════════════════════════════════════

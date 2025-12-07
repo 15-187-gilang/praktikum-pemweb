@@ -1,0 +1,108 @@
+{
+  "info": {
+    "_postman_id": "pertemuan6-api-2025",
+    "name": "Pertemuan6 - Manajemen Matakuliah API",
+    "description": "API testing untuk CRUD matakuliah dengan PostgreSQL",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET - Daftar Semua Matakuliah",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:6543/api/models",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "6543",
+          "path": ["api", "models"]
+        }
+      }
+    },
+    {
+      "name": "2. POST - Tambah Matakuliah Baru",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Algoritma dan Pemrograman\",\n  \"value\": 3\n}"
+        },
+        "url": {
+          "raw": "http://localhost:6543/api/models",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "6543",
+          "path": ["api", "models"]
+        }
+      }
+    },
+    {
+      "name": "3. GET - Detail Matakuliah (ID 1)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:6543/api/models/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "6543",
+          "path": ["api", "models", "1"]
+        }
+      }
+    },
+    {
+      "name": "4. PUT - Update Matakuliah (ID 1)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Algoritma dan Pemrograman (Updated)\",\n  \"value\": 4\n}"
+        },
+        "url": {
+          "raw": "http://localhost:6543/api/models/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "6543",
+          "path": ["api", "models", "1"]
+        }
+      }
+    },
+    {
+      "name": "5. DELETE - Hapus Matakuliah (ID 1)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:6543/api/models/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "6543",
+          "path": ["api", "models", "1"]
+        }
+      }
+    }
+  ]
+}
