@@ -1,4 +1,3 @@
-<img width="1071" height="856" alt="Screenshot 2025-12-07 215516" src="https://github.com/user-attachments/assets/82f8e12f-854c-477c-bc1e-bb95d33824d8" />
 # Aplikasi Manajemen Matakuliah dengan Pyramid
 
 Aplikasi API sederhana untuk manajemen matakuliah berdasarkan apa yang telah dipelajari dalam praktikum.
