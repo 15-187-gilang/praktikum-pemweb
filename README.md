@@ -4,33 +4,7 @@
 Aplikasi API sederhana untuk manajemen matakuliah berdasarkan apa yang telah dipelajari dalam praktikum.
 Aplikasi ini adalah API backend untuk mengelola data matakuliah menggunakan Pyramid Framework. Aplikasi menyediakan endpoint REST API untuk operasi CRUD (Create, Read, Update, Delete) pada data matakuliah.
 
-## Model Data
 
-### Matakuliah
-
-Model `Matakuliah` dengan atribut berikut:
-
-| Atribut   | Tipe    | Deskripsi              | Constraint      |
-|-----------|---------|------------------------|-----------------|
-| id        | Integer | Primary key            | Auto Increment  |
-| kode_mk   | Text    | Kode mata kuliah       | Unique, Not null|
-| nama_mk   | Text    | Nama mata kuliah       | Not null        |
-| sks       | Integer | Jumlah SKS             | Not null        |
-| semester  | Integer | Semester pengambilan   | Not null        |
-
-## API Endpoints
-
-Implementasi endpoint untuk operasi dasar:
-
-| HTTP Method | URL Pattern            | Deskripsi                        |
-|-------------|------------------------|----------------------------------|
-| GET         | `/api/matakuliah`      | Mendapatkan semua matakuliah     |
-| GET         | `/api/matakuliah/{id}` | Mendapatkan detail satu matakuliah|
-| POST        | `/api/matakuliah`      | Menambahkan matakuliah baru      |
-| PUT         | `/api/matakuliah/{id}` | Mengupdate data matakuliah       |
-| DELETE      | `/api/matakuliah/{id}` | Menghapus data matakuliah        |
-
-⚠️ **Penting:** Jangan lupa menambahkan parameter `request_method` pada setiap route untuk memastikan routing berfungsi dengan benar!
 
 ## Cara Instalasi
 
@@ -85,7 +59,31 @@ pserve development.ini --reload
 ```
 
 Server akan berjalan di `http://localhost:6543`
+## Model Data
 
+### Matakuliah
+
+Model `Matakuliah` dengan atribut berikut:
+
+| Atribut   | Tipe    | Deskripsi              | Constraint      |
+|-----------|---------|------------------------|-----------------|
+| id        | Integer | Primary key            | Auto Increment  |
+| kode_mk   | Text    | Kode mata kuliah       | Unique, Not null|
+| nama_mk   | Text    | Nama mata kuliah       | Not null        |
+| sks       | Integer | Jumlah SKS             | Not null        |
+| semester  | Integer | Semester pengambilan   | Not null        |
+
+## API Endpoints
+
+Implementasi endpoint untuk operasi dasar:
+
+| HTTP Method | URL Pattern            | Deskripsi                        |
+|-------------|------------------------|----------------------------------|
+| GET         | `/api/matakuliah`      | Mendapatkan semua matakuliah     |
+| GET         | `/api/matakuliah/{id}` | Mendapatkan detail satu matakuliah|
+| POST        | `/api/matakuliah`      | Menambahkan matakuliah baru      |
+| PUT         | `/api/matakuliah/{id}` | Mengupdate data matakuliah       |
+| DELETE      | `/api/matakuliah/{id}` | Menghapus data matakuliah        |
 ## Testing
 
 ### Tambahkan data awal minimal 3 matakuliah
