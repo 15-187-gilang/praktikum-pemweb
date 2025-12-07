@@ -84,7 +84,7 @@ melihat semua data matakuliah yang tersimpan di database.
 
 **Screenshot Testing:**
 
-<img width="1445" height="960" alt="image" src="https://github.com/user-attachments/assets/f14a9023-8c77-4479-ba7e-6024acdc49a0" />
+<img width="557" height="536" alt="Screenshot 2025-12-07 215240" src="https://github.com/user-attachments/assets/ce83be00-df73-4697-944d-52224c1f8b51" />
 
 **Contoh Response:**
 ```json
