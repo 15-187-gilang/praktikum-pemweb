@@ -61,18 +61,6 @@ pserve development.ini --reload
 Server akan berjalan di `http://localhost:6543`
 ## Model Data
 
-### Matakuliah
-
-Model `Matakuliah` dengan atribut berikut:
-
-| Atribut   | Tipe    | Deskripsi              | Constraint      |
-|-----------|---------|------------------------|-----------------|
-| id        | Integer | Primary key            | Auto Increment  |
-| kode_mk   | Text    | Kode mata kuliah       | Unique, Not null|
-| nama_mk   | Text    | Nama mata kuliah       | Not null        |
-| sks       | Integer | Jumlah SKS             | Not null        |
-| semester  | Integer | Semester pengambilan   | Not null        |
-
 ## API Endpoints
 
 Implementasi endpoint untuk operasi dasar:
@@ -86,17 +74,13 @@ Implementasi endpoint untuk operasi dasar:
 | DELETE      | `/api/matakuliah/{id}` | Menghapus data matakuliah        |
 ## Testing
 
-### Tambahkan data awal minimal 3 matakuliah
+### Tambahkan data awal minimal 4 matakuliah
 
-Anda bisa menggunakan script `initialize_db.py` atau menambahkan manual via API.
+### 1. GET 
 
-## Dokumentasi Testing API dengan Postman
+melihat semua data matakuliah yang tersimpan di database.
 
-### 1. GET All Matakuliah
-
-Mendapatkan semua data matakuliah yang tersimpan di database.
-
-**Endpoint:** `GET http://localhost:6543/api/matakuliah`
+**Endpoint:** `GET http://localhost:6543/api/models`
 
 **Screenshot Testing:**
 
